@@ -1,6 +1,7 @@
-# Exam Question Generator
+# AutoExamGen – AI Based Exam Question Generator
 
-An intelligent Python-based system that automatically generates exam questions from input text using NLP techniques.
+AutoExamGen is an intelligent Python-based system that automatically generates exam questions
+(MCQ, short answer, and long answer) from input text using Natural Language Processing (NLP) techniques.
 
 ## Features
 
@@ -8,6 +9,8 @@ An intelligent Python-based system that automatically generates exam questions f
 - **Keyword Extraction**: Identifies important concepts using RAKE algorithm
 - **Question Generation**: Uses HuggingFace T5 model to generate questions
 - **Option Generation**: Creates multiple-choice options with distractors
+- **Syllabus-Based Generation**: Generate questions topic-wise from syllabus input
+- **Download Support**: Export generated question papers
 - **Multiple Interfaces**: CLI and Web interface (Flask) support
 - **JSON Output**: Structured output format for easy integration
 
@@ -19,15 +22,15 @@ An intelligent Python-based system that automatically generates exam questions f
 pip install -r requirements.txt
 ```
 
-3. Download required NLTK data:
-```python
-python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('wordnet')"
-```
+3. Download required NLTK data (run once):
+```bash
+python setup_nltk.py
 
 ## Usage
 
 ### Web Interface
-```bash
+The web interface allows users to upload text or documents and configure question types and difficulty.
+
 python app.py
 ```
 Then open http://localhost:5000 in your browser.
@@ -42,9 +45,28 @@ questions = generator.generate_questions("Your input text here")
 
 ## Project Structure
 
-- `question_generator.py` - Core question generation logic
-- `text_processor.py` - Text cleaning and preprocessing
-- `keyword_extractor.py` - Keyword and important sentence extraction
-- `option_generator.py` - Multiple choice option generation
-- `app.py` - Flask web application
-- `
+- `app.py` – Flask web application (main entry point)
+- `exam_question_system.py` – Orchestrates the complete question generation pipeline
+- `question_generator.py` – Core question generation logic
+- `text_processor.py` – Text cleaning and preprocessing
+- `keyword_extractor.py` – Keyword and concept extraction (RAKE)
+- `option_generator.py` – MCQ option and distractor generation
+- `syllabus_processor.py` – Syllabus-based question generation
+- `local_question_generator.py` – Transformer-based (T5) question generator
+- `setup_nltk.py` – NLTK data setup script
+
+## Technologies Used
+
+- Python
+- Flask
+- Natural Language Processing (NLP)
+- NLTK
+- RAKE Algorithm
+- HuggingFace Transformers (T5)
+- HTML, CSS (Web Interface)
+## Author
+
+
+**Om Namdev**  
+B.Tech AI & DS  
+Aspiring Data Scientist
