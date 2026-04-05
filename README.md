@@ -1,3 +1,11 @@
+---
+title: AutoExamGen
+emoji: 📝
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+---
 # AutoExamGen – AI Based Exam Question Generator
 
 AutoExamGen is an intelligent Python-based system that automatically generates exam questions
