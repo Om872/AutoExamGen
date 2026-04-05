@@ -490,8 +490,8 @@ if __name__ == '__main__':
     print("🔗 Access the application at: http://localhost:5000")
     print("💡 Using rule-based question generation for faster startup")
     print("⚡ System will initialize on first use")
-
     # Configure Flask for better timeout handling
     app.config['PERMANENT_SESSION_LIFETIME'] = 1800  # 30 minutes
 
-    app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)
+    port = int(os.environ.get("PORT", 7860))  # HF uses 7860
+    app.run(host="0.0.0.0", port=port, debug=False)
