@@ -11,3 +11,4 @@ sentencepiece>=0.1.99
 python-docx>=0.8.11
 openai>=1.0.0
 PyPDF2>=3.0.0
+huggingface-hub
